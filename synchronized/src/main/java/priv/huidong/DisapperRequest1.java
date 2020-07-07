@@ -21,7 +21,7 @@ public class DisapperRequest1 implements Runnable{
         System.out.println(i);
     }
 
-    public void run() {
+    public synchronized void run() {
         for (int j= 0;j<10000;j++){
             i++;
         }

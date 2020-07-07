@@ -8,7 +8,8 @@ package priv.huidong;
  */
 public class SynchronizedObjectCodeBlock2 implements Runnable {
 
-    static SynchronizedObjectCodeBlock2 instance = new SynchronizedObjectCodeBlock2();
+    static SynchronizedObjectCodeBlock2 instance1 = new SynchronizedObjectCodeBlock2();
+    static SynchronizedObjectCodeBlock2 instance2 = new SynchronizedObjectCodeBlock2();
 //
 //    Object lock0 = new Object();
 //    Object lock1 = new Object();
@@ -26,8 +27,8 @@ public class SynchronizedObjectCodeBlock2 implements Runnable {
     }
 
     public static void main(String[] args) {
-        Thread t1 = new Thread(instance);
-        Thread t2 = new Thread(instance);
+        Thread t1 = new Thread(instance1);
+        Thread t2 = new Thread(instance2);
         t1.start();
         t2.start();
         while (t1.isAlive()||t2.isAlive()){
